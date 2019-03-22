@@ -8,8 +8,11 @@ export PATH="${PATH}:/Applications/Visual Studio Code.app/Contents/Resources/app
 # rbenv
 eval "$(rbenv init -)"
 
+# nodebrew path
+export PATH="${PATH}:/${HOME}/.nodebrew/current/bin"
+
 # credentials
-source ~/.credentials/env_val
+source ~/.credentials/env_val_bash
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
