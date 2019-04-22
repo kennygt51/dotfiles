@@ -1,3 +1,7 @@
+## Environment
+### Docker buildkit
+set -x DOCKER_BUILDKIT "1"
+
 ## PATH
 # Visual Studio Code
 set -x PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
@@ -7,8 +11,10 @@ set -x PATH "$HOME/.nodebrew/current/bin" $PATH
 eval (rbenv init - | source)
 
 ## Aliases
-alias tf='terraform'
+source ~/dotfiles/.alias
 
 ## Credentials
 source ~/.credentials/env_val_fish
 
+## MySQL
+set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
