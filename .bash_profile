@@ -18,3 +18,7 @@ source ~/.credentials/env_val_bash
 if [ -f ~/.bashrc ]; then
         . ~/.bashrc
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/goto.kenta/.sdkman"
+[[ -s "/Users/goto.kenta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/goto.kenta/.sdkman/bin/sdkman-init.sh"

@@ -31,3 +31,6 @@ alias gc='git commit'
 # command alias
 alias tf='terraform' # terraform command alias
 alias d='docker'     # docker command alias
+
+# fzf
+alias fzfc='find . | fzf'

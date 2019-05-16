@@ -2,6 +2,9 @@
 ### Docker buildkit
 set -x DOCKER_BUILDKIT "1"
 
+### fish FZF
+set -U FZF_LEGACY_KEYBINDINGS 0
+
 ## PATH
 # Visual Studio Code
 set -x PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
