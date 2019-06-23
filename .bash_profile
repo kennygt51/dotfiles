@@ -20,5 +20,5 @@ if [ -f ~/.bashrc ]; then
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/goto.kenta/.sdkman"
-[[ -s "/Users/goto.kenta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/goto.kenta/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="${PATH}/.sdkman"
+[[ -s "${PATH}/.sdkman/bin/sdkman-init.sh" ]] && source "${PATH}/.sdkman/bin/sdkman-init.sh"
