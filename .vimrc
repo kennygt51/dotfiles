@@ -11,6 +11,5 @@ set number
 set virtualedit=onemore
 set smartindent
 set showmatch
-set laststatus=
 set wildmode=list:longest
 syntax enable

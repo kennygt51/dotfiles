@@ -35,3 +35,6 @@ alias k='kubectl'    # kubectl command alias
 
 # fzf
 alias fzfc='find . | fzf'
+
+# ghq
+alias ghg='ghq get'
