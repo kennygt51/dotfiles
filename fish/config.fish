@@ -29,6 +29,6 @@ set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
 #eval (pyenv init - | source)
 
 # vi mode
-fish_vi_mode
+fish_vi_key_bindings
 
 set fish_theme taktoa
