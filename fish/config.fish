@@ -25,7 +25,10 @@ source ~/.credentials/env_val_fish
 set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
 
 ## python
-set PATH $HOME/.pyenv/shims $PATH
-# eval (pyenv init - | source)
+#set PATH $HOME/.pyenv/shims $PATH
+#eval (pyenv init - | source)
+
+# vi mode
+fish_vi_mode
 
 set fish_theme taktoa
