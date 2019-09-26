@@ -28,6 +28,9 @@ set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
 #set PATH $HOME/.pyenv/shims $PATH
 #eval (pyenv init - | source)
 
+## golang
+set GOPATH $HOME/.go
+
 # vi mode
 fish_vi_key_bindings
 
