@@ -29,7 +29,7 @@ set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
 #eval (pyenv init - | source)
 
 ## golang
-set GOPATH $HOME/.go
+set -x GOPATH $HOME/.go
 
 # vi mode
 fish_vi_key_bindings
