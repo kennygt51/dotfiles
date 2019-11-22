@@ -17,6 +17,9 @@ set -x PATH "/usr/local/bin/google-cloud-sdk/bin" $PATH
 
 ## Aliases
 source ~/dotfiles/.alias
+if test -f ~/.office_alias
+    source ~/.office_alias
+end
 
 ## Credentials
 source ~/.credentials/env_val_fish
@@ -25,11 +28,12 @@ source ~/.credentials/env_val_fish
 set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
 
 ## python
-#set PATH $HOME/.pyenv/shims $PATH
-#eval (pyenv init - | source)
+set PATH $HOME/.pyenv/shims $PATH
+eval (pyenv init - | source)
 
 ## golang
 set -x GOPATH $HOME/.go
+set -x PATH $GOPATH/bin $PATH
 
 # vi mode
 fish_vi_key_bindings
