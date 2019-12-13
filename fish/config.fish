@@ -12,6 +12,11 @@ set -x PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $P
 set -x PATH "$HOME/.nodebrew/current/bin" $PATH
 # rbenv
 eval (rbenv init - | source)
+# nvm
+set -x NVM_DIR "$HOME/.nvm"
+# direnv
+eval (direnv hook fish)
+
 # gcloud
 set -x PATH "/usr/local/bin/google-cloud-sdk/bin" $PATH
 
@@ -25,11 +30,11 @@ end
 source ~/.credentials/env_val_fish
 
 ## MySQL
-set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
+# set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
 
 ## python
-set PATH $HOME/.pyenv/shims $PATH
-eval (pyenv init - | source)
+#set PATH $HOME/.pyenv/shims $PATH
+#eval (pyenv init - | source)
 
 ## golang
 set -x GOPATH $HOME/.go
