@@ -2,3 +2,6 @@ fish/completions
 fish/conf.d
 fish/fish_variables
 fish/functions
+
+fish/config.fish.backup
+nvim/.netrwhist

@@ -11,7 +11,8 @@ set -x PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $P
 # nodebrew
 set -x PATH "$HOME/.nodebrew/current/bin" $PATH
 # rbenv
-eval (rbenv init - | source)
+# eval (rbenv init - | source) 
+status --is-interactive; and source (rbenv init -|psub)
 # nvm
 set -x NVM_DIR "$HOME/.nvm"
 # direnv
@@ -34,7 +35,8 @@ source ~/.credentials/env_val_fish
 
 ## python
 #set PATH $HOME/.pyenv/shims $PATH
-#eval (pyenv init - | source)
+#set PATH $HOME/Library/Python/3.7/bin $PATH
+eval (pyenv init - | source)
 
 ## golang
 set -x GOPATH $HOME/.go
@@ -44,3 +46,6 @@ set -x PATH $GOPATH/bin $PATH
 fish_vi_key_bindings
 
 set fish_theme taktoa
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/goto.kenta/google-cloud-sdk/path.fish.inc' ]; . '/Users/goto.kenta/google-cloud-sdk/path.fish.inc'; end

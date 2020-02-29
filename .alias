@@ -41,3 +41,6 @@ alias fzfc='find . | fzf'
 # ghq
 alias gcl='ghq get'
 alias gl='cd (ghq root)/(ghq list | peco)'
+
+# Ruby
+alias be='bundle exec'
