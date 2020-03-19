@@ -9,7 +9,9 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 # Visual Studio Code
 set -x PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
 # nodebrew
-set -x PATH "$HOME/.nodebrew/current/bin" $PATH
+set -x PATH "/usr/local/var/nodebrew/current/bin:$PATH" 
+set -x NODEBREW_ROOT /usr/local/var/nodebrew
+
 # rbenv
 # eval (rbenv init - | source) 
 status --is-interactive; and source (rbenv init -|psub)
