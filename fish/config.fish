@@ -12,6 +12,13 @@ set -x PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $P
 set -x PATH "/usr/local/var/nodebrew/current/bin:$PATH" 
 set -x NODEBREW_ROOT /usr/local/var/nodebrew
 
+# goenv
+## goenvを利用する為に必要なPath
+set -x GOENV_ROOT $HOME/.goenv
+set -x PATH $GOENV_ROOT/bin $PATH
+## goenv init処理（go envなど生成される）
+status --is-interactive; and source (goenv init -|psub)
+
 # rbenv
 # eval (rbenv init - | source) 
 status --is-interactive; and source (rbenv init -|psub)
