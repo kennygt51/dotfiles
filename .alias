@@ -24,6 +24,7 @@ alias gs='git status'
 alias gp='git push'
 alias gpo='git push origin'
 alias gpoh='git push origin head'
+alias gpl='git pull'
 alias gb='git branch'
 alias gst='git status'
 alias gco='git checkout'
@@ -40,7 +41,7 @@ alias fzfc='find . | fzf'
 
 # ghq
 alias gcl='ghq get'
-alias gl='cd (ghq root)/(ghq list | peco)'
+alias gl='cd `ghq root`/`ghq list | peco`'
 
 # Ruby
 alias be='bundle exec'

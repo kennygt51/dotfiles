@@ -1,16 +1,21 @@
-#!/bin/bash
+#!/bin/sh
 
 MY_DIR=$(cd;pwd)
 DOT_DIR="${MY_DIR}/dotfiles"
+HOME_DIR="${HOME}"
 
 echo "Deploy dotfiles start!"
 
-for f in .??*
-do
-  [[ ${f} = ".git" ]] && continue
-  [[ ${f} = ".gitignore" ]] && continue
-  ln -snfv ${DOT_DIR}/${f} ${HOME}/${f}
-  echo "deploy done!(${f})"
-done
+# .zshrc
+if [ ! -L "${HOME}/.zshrc" ];then
+  echo "Create symbolic link of .zshrc"
+  ln -s "${DOT_DIR}/.zshrc" "${HOME}/.zshrc"
+fi
+
+# .vimrc
+if [ ! -L "${HOME}/.vimrc" ];then
+  echo "Create symbolic link of .vimrc"
+  ln -s "${DOT_DIR}/.vimrc" "${HOME}/.vimrc"
+fi
 
 echo "Deploy dotfiles complete!"

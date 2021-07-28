@@ -1,4 +1,14 @@
 ##############################
+### base config
+##############################
+# Environment Variables
+export DOT_DIR="${HOME}/dotfiles"
+# alias
+source "${DOT_DIR}/.alias"
+# source credentials
+source "${HOME}/.credentials/env_val"
+
+##############################
 ### zsh plugin
 ##############################
 # for vcs_info
@@ -78,10 +88,14 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 ##############################
 ### command line tools
 ##############################
+# asdf
+. $(brew --prefix asdf)/asdf.sh
+
 # kubectl
 export PATH="${PATH}:${HOME}/.krew/bin"
 
 ## rbenv
+eval "$(rbenv init - zsh)"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 
 ## MySQL
@@ -116,41 +130,17 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 ## BuildKit active
 export DOCKER_BUILDKIT=1
 
-##############################
-### alias
-##############################
-# git
-alias g='git'
-alias ga='git add'
-alias gd='git diff'
-alias gs='git status'
-alias gp='git push'
-alias gpo='git push origin'
-alias gpoh='git push origin head'
-alias gb='git branch'
-alias gst='git status'
-alias gco='git checkout'
-alias gf='git fetch'
-alias gc='git commit'
+# direnv
+eval "$(direnv hook zsh)"
 
-# command alias
-alias tf='terraform' # terraform command alias
-alias d='docker'     # docker command alias
-alias k='kubectl'    # kubectl command alias
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
 
-# fzf
-alias fzfc='find . | fzf'
+# Serverless Framework
+export PATH="$HOME/.serverless/bin:$PATH"
 
-# ghq
-alias gcl='ghq get'
-alias gl='cd `ghq root`/`ghq list | peco`'
+# docker-sync
+if which ruby >/dev/null && which gem >/dev/null; then
+  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
-# Ruby
-alias be='bundle exec'
-
-
-##############################
-### etc
-##############################
-# source credentials
-source ~/.credentials/env_val_zsh
