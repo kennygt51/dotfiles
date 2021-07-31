@@ -105,7 +105,7 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/git/bin:$PATH"
 
 # python
-#set PATH $HOME/.pyenv/shims $PATH
+export PATH="$HOME/.pyenv/shims:$PATH"
 #set PATH $HOME/Library/Python/3.7/bin $PATH
 eval "$(pyenv init -)"
 
