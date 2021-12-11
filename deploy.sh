@@ -18,6 +18,12 @@ if [ ! -L "${HOME}/.vimrc" ];then
   ln -s "${DOT_DIR}/.vimrc" "${HOME}/.vimrc"
 fi
 
+# .alias
+if [ ! -L "${HOME}/.alias" ];then
+  echo "Create symbolic link of .alias"
+  ln -s "${DOT_DIR}/.alias" "${HOME}/.alias"
+fi
+
 # .tmux.conf
 if [ ! -L "${HOME}/.tmux.conf" ];then
   echo "Create symbolic link of .tmux.conf"

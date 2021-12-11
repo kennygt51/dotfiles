@@ -30,7 +30,9 @@ if type brew &>/dev/null; then
 fi
 
 # for zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
+#export ZPLUG_HOME=/usr/local/opt/zplug
+#source $ZPLUG_HOME/init.zsh
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 # install plugin
@@ -144,3 +146,5 @@ if which ruby >/dev/null && which gem >/dev/null; then
   PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
