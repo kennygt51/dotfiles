@@ -18,4 +18,10 @@ if [ ! -L "${HOME}/.vimrc" ];then
   ln -s "${DOT_DIR}/.vimrc" "${HOME}/.vimrc"
 fi
 
+# .tmux.conf
+if [ ! -L "${HOME}/.tmux.conf" ];then
+  echo "Create symbolic link of .tmux.conf"
+  ln -s "${DOT_DIR}/.tmux.conf" "${HOME}/.tmux.conf"
+fi
+
 echo "Deploy dotfiles complete!"
