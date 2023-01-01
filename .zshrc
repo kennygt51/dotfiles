@@ -30,7 +30,9 @@ if type brew &>/dev/null; then
 fi
 
 # for zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
+#export ZPLUG_HOME=/usr/local/opt/zplug
+#source $ZPLUG_HOME/init.zsh
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 # install plugin
@@ -89,46 +91,28 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 ### command line tools
 ##############################
 # asdf
-. $(brew --prefix asdf)/asdf.sh
-
-# kubectl
-export PATH="${PATH}:${HOME}/.krew/bin"
-
-## rbenv
-eval "$(rbenv init - zsh)"
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-
-## MySQL
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # git
 export PATH="/usr/local/git/bin:$PATH"
 
-# python
-export PATH="$HOME/.pyenv/shims:$PATH"
-#set PATH $HOME/Library/Python/3.7/bin $PATH
-eval "$(pyenv init -)"
-
-# golang
-## goenvを利用する為に必要なPath
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-export GOENV_DISABLE_GOPATH=1
-
-## goenv init処理（go envなど生成される）
-eval "$(goenv init -)"
-
+# Go
 ## GOPATH
-export GOPATH="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$(go env GOPATH)/bin:$PATH"
 
-## Java
+# Java
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
+# kubectl
+export PATH="${PATH}:${HOME}/.krew/bin"
+
 # docker
-## BuildKit active
 export DOCKER_BUILDKIT=1
+
+# MySQL
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -139,8 +123,5 @@ export PATH="$HOME/.serverless/bin:$PATH"
 # Serverless Framework
 export PATH="$HOME/.serverless/bin:$PATH"
 
-# docker-sync
-if which ruby >/dev/null && which gem >/dev/null; then
-  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
-
+# asdf
+source "${HOME}"/.docker/init-zsh.sh || true # Added by Docker Desktop
