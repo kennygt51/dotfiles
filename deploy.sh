@@ -1,10 +1,11 @@
 #!/bin/sh
-
-MY_DIR=$(cd;pwd)
+MY_DIR=$(cd ;pwd)
 DOT_DIR="${MY_DIR}/dotfiles"
-HOME_DIR="${HOME}"
 
 echo "Deploy dotfiles start!"
+if [ ! -L "${HOME}/.zshrc" ];then
+  aaa
+fi
 
 # .zshrc
 if [ ! -L "${HOME}/.zshrc" ];then
