@@ -3,9 +3,9 @@ MY_DIR=$(cd ;pwd)
 DOT_DIR="${MY_DIR}/dotfiles"
 
 echo "Deploy dotfiles start!"
-if [ ! -L "${HOME}/.zshrc" ];then
-  aaa
-fi
+#if [ ! -L "${HOME}/.zshrc" ];then
+#  aaa
+#fi
 
 # .zshrc
 if [ ! -L "${HOME}/.zshrc" ];then
